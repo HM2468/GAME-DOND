@@ -53,12 +53,12 @@ module DOND_Game
 		end
 		
 		def created_by
-			studentname = "Mou Danping"
+			studentname = "HuangMiao"
 			return studentname
 		end
 		
 		def student_id
-			studentid = "51989963"
+			studentid = "51988466"
 			return studentid
 		end
 		

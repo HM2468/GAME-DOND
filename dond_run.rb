@@ -5,7 +5,7 @@
 
 # The file where you are to write code to pass the tests must be present in the same folder.
 # See http://rspec.codeschool.com/levels/1 for help about RSpec
-require "#{File.dirname(__FILE__)}/wad_dond_gen_01"
+require "#{File.dirname(__FILE__)}/dond_gen"
 
 # Main program
 module DOND_Game

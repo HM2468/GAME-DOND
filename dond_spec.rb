@@ -7,7 +7,7 @@
 # The file where you are to write code to pass the tests must be present in the same folder.
 # See http://rspec.codeschool.com/levels/1 for help about RSpec
 # https://en.wikipedia.org/wiki/Wheel_of_Fortune_(UK_game_show)
-require "#{File.dirname(__FILE__)}/wad_dond_gen_01"
+require "#{File.dirname(__FILE__)}/dond_gen"
 
 # predefined method - NOT to be removed
 def check_valid(secret)
@@ -45,7 +45,7 @@ module DOND_Game
 				@game.start
 			end
 			it "should contain a method student_id which returns the students ID number" do
-				studentid = "51989963"				# -----Change text to your own student ID-----
+				studentid = "51988466"				# -----Change text to your own student ID-----
 				@game.student_id.should == studentid
 			end
 			it "should display a message showing the id of the student when the method start called" do
@@ -244,10 +244,6 @@ module DOND_Game
 				@output.should_receive(:puts).with("Log: #{@game.selectedboxes.inspect}")
 				@game.showboxesselected			
 			end
-			it "should display message requesting user to select box to open when method displayselectboxprompt called" do
-				@output.should_receive(:puts).with("Enter the number of the box you wish to open. Enter returns to menu.")
-				@game.displayselectboxprompt
-			end
 			it "should display the status of a box (as Opened) when method openbox receives its associated box number" do
 				@game.resetgame
 				@game.assignvaluestoboxes
@@ -314,11 +310,6 @@ module DOND_Game
 				offer = rand(0..100000)
 				@output.should_receive(:puts).with("Banker offers you for your chosen box: #{offer}")
 				@game.bankerphoneswithvalue(offer)
-			end
-			it "should calculate and return offer from banker when value in box received by method bankercalcsvalue" do
-				value = rand(2..100000)
-				offer = @game.bankercalcsvalue(value)
-				offer.should == value / 2
 			end
 			it "should return the number of boxes still closed when method numberofboxesclosed called" do
 				@game.resetgame
